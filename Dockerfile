@@ -1,4 +1,4 @@
-FROM nodesource/node:4.8.5-alpine
+FROM node:4.8.5-alpine
 
 RUN mkdir -p /home/nodejs/app
 WORKDIR /home/nodejs/app
