@@ -1,13 +1,12 @@
 pipeline {
-agent {
-          dockerfile true
-      }
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Testing'
-        sh 'node -v'
-      }
-    }
-  }
+    agent node:4.8.5-alpine
+        stages {
+            stage('Build') {
+
+                steps {
+                        echo 'Testing'
+                        sh 'npm install' 
+                }
+            }
+        }
 }
