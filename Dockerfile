@@ -6,7 +6,3 @@ WORKDIR /home/nodejs/app
 COPY package.json /home/nodejs/app
 RUN npm install
 COPY . /home/nodejs/app
-
-LABEL usage="testing"
-
-CMD ["node", "app.js"]
