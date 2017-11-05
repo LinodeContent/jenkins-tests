@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        
+
         sh 'npm install'
       }
     }
@@ -17,8 +17,8 @@ pipeline {
       steps {
         sh 'node -v'
         sh 'npm cache clean'
-        sh 'npm start'
-        sh 'npm stop'
+        sh 'node app.js'
+        
       }
     }
   }
