@@ -17,7 +17,6 @@ pipeline {
         stage('Test') {
           steps {
             sh 'node -v'
-            sh 'npm cache clean'
             sh 'node app.js'
           }
         }
@@ -25,7 +24,7 @@ pipeline {
           steps {
             sh 'npm test'
           }
-          
+
         }
 
       }
