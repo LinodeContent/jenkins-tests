@@ -4,7 +4,7 @@
   "description": "This is a test",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start app.js",
+    "start": "pm2 start app.js -u node",
     "stop": "pm2 stop app.js",
     "test": "mocha --reporter spec tests/*",
     "test-junit": "mocha --reporter mocha-junit-reporter tests/*"
