@@ -23,7 +23,6 @@ pipeline {
         stage('Test 2') {
           steps {
             sh 'npm test'
-            currentBuild.result = 'SUCCESS'
           }
         }
       }
@@ -31,5 +30,6 @@ pipeline {
   }
   environment {
     npm_config_cache = 'npm-cache'
+    currentBuild.result = 'SUCCESS'
   }
 }
