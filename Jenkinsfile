@@ -18,7 +18,12 @@ pipeline {
         sh 'node -v'
         sh 'npm cache clean'
         sh 'node app.js'
-        
+
+      }
+      post {
+      success {
+      currentBuild.result = 'SUCCESS'
+      }
       }
     }
   }
