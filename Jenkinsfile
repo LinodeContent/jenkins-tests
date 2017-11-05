@@ -18,15 +18,14 @@ pipeline {
           steps {
             sh 'node -v'
             sh 'node app.js'
+            timeout(time: 20)
           }
         }
         stage('Test 2') {
           steps {
             sh 'npm test'
           }
-
         }
-
       }
     }
   }
