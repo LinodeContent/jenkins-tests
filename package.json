@@ -4,9 +4,8 @@
   "description": "This is a test",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "forever-up": "forever start --minUptime 1000 --spinSleepTime 1000 app.js",
-    "forever-down": "forever stopall",
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 app.js",
+    "stop": "forever stopall",
     "test": "mocha --reporter spec tests/*",
     "test-junit": "mocha --reporter mocha-junit-reporter tests/*"
   },
