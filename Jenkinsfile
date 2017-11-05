@@ -10,24 +10,16 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-
       }
     }
-    stage('Test') {
-
         stage('Test') {
           steps {
             sh 'node -v'
             sh 'npm start'
-          }
-        }
-        stage('Test 2') {
-          steps {
             sh 'npm test'
+            sh 'npm stop'
           }
         }
-
-    }
   }
   environment {
     npm_config_cache = 'npm-cache'
