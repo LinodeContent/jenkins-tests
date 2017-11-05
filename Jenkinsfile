@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
           steps {
             sh 'node -v'
-            sh 'node app.js'
+            sh 'node ./node_modules/mocha/bin/forever start --minUptime 1000 --spinSleepTime 1000 app.js'
           }
         }
         stage('Test 2') {
@@ -30,6 +30,5 @@ pipeline {
   }
   environment {
     npm_config_cache = 'npm-cache'
-    currentBuild.result = 'SUCCESS'
-  }
+    }
 }
