@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-        
+
       }
     }
     stage('Test') {
@@ -31,5 +31,6 @@ pipeline {
   }
   environment {
     npm_config_cache = 'npm-cache'
+    HOME = .
     }
 }
