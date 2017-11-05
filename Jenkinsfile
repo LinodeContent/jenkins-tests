@@ -16,7 +16,7 @@ pipeline {
           steps {
             sh 'node -v'
             sh 'npm start'
-            sh 'npm test'
+            
             sh 'npm stop'
           }
         }
