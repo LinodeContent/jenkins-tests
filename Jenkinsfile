@@ -4,7 +4,7 @@ pipeline {
       image 'node:6-alpine'
       args '-p 9000:9000'
     }
-
+    
   }
   stages {
     stage('Build') {
@@ -19,15 +19,14 @@ pipeline {
             sh 'node -v'
             sh 'npm cache clean'
             sh 'node app.js'
+            timeout(time: 20)
           }
         }
         stage('Test 2') {
           steps {
             sh 'npm test'
           }
-          
         }
-
       }
     }
   }
