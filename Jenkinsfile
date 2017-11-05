@@ -14,7 +14,7 @@ pipeline {
       }
     }
     stage('Test') {
-      parallel {
+
         stage('Test') {
           steps {
             sh 'node -v'
@@ -26,7 +26,7 @@ pipeline {
             sh 'npm test'
           }
         }
-      }
+
     }
   }
   environment {
