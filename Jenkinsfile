@@ -6,7 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'node --version'
-                sh 'node test'
+                sh 'node ./node_modules/.bin/mocha tests/**'
             }
         }
     }
