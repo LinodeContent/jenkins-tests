@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:6-alpine'
+      image 'keymetrics/pm2:6'
       args '-p 9000:9000'
     }
 
@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
+        sh 'npm install pm2 -g'
       }
     }
     stage('Test') {
