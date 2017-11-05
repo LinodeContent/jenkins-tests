@@ -9,21 +9,28 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-
         sh 'npm install'
       }
     }
     stage('Test') {
-      steps {
-        sh 'node -v'
-        sh 'npm cache clean'
-        sh 'node app.js'
-
-      }
-      post {
-      success {
-      currentBuild.result = 'SUCCESS'
-      }
+      parallel {
+        stage('Test') {
+          steps {
+            sh 'node -v'
+            sh 'npm cache clean'
+            sh 'node app.js'
+          }
+        }
+        stage('Test 2') {
+          steps {
+            sh 'npm test'
+          }
+        }
+        post {
+        success {
+        currentBuild.result = 'SUCCESS'
+        }
+        }
       }
     }
   }
