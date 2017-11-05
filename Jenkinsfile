@@ -25,12 +25,13 @@ pipeline {
           steps {
             sh 'npm test'
           }
+          post {
+          success {
+          currentBuild.result = 'SUCCESS'
+          }
+          }
         }
-        post {
-        success {
-        currentBuild.result = 'SUCCESS'
-        }
-        }
+
       }
     }
   }
